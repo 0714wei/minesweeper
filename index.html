@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8" />
+  <title>踩地雷小遊戲</title>
+  <!-- 載入 CSS -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="game-container">
+    <h1>踩地雷</h1>
+    <div class="hint">左鍵：翻格子　｜　右鍵：插旗 🚩</div>
+    <div id="score">分數：0</div>
+    <div id="status"></div>
+    <div id="board"></div>
+    <button id="reset">重新開始</button>
+  </div>
+
+  <!-- 載入 JS（defer 讓它在 HTML 載入後執行） -->
+  <script src="game.js" defer></script>
+</body>
+</html>
