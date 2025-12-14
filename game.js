@@ -1,4 +1,4 @@
-// ==== 可以依需求調整的參數（規模 / 地雷數） ====
+// 依需求調整的參數（規模 / 地雷數） 
 const ROWS = 10;   // 列數
 const COLS = 10;   // 行數
 const MINES = 15;  // 地雷數量
@@ -6,13 +6,13 @@ function updateScore(change) {
     score += change;
     document.getElementById('score').textContent = `分數：${score}`;
 }
-// ==== 遊戲狀態 ====
+
 let board = [];        // 二維陣列，存每個格子的資訊
 let gameOver = false;
 let cellsLeft = 0;     // 還剩多少「不是地雷」的格子沒翻開
 
 function initGame() {
-    // 🎯 一開始重設分數
+    // 重設分數
     score = 0;
     updateScore(0);
   board = [];
@@ -147,7 +147,7 @@ function revealCell(r, c) {
     cellEl.textContent = cell.adjacent;
     cellEl.classList.add('n' + cell.adjacent);
   } else {
-    // 0 的話，做「展開」，把周圍連續的 0 都打開
+    // 0 的話，展開，把周圍連續的 0 都打開
     for (let dr = -1; dr <= 1; dr++) {
       for (let dc = -1; dc <= 1; dc++) {
         if (dr === 0 && dc === 0) continue;
@@ -217,3 +217,4 @@ window.addEventListener('DOMContentLoaded', () => {
    document.getElementById('reset').addEventListener('click', initGame);
   initGame();
 });
+
